@@ -84,6 +84,8 @@ namespace OaiPmhNet.Converters
                 properties.Add(EncodeOne("until", _dateConverter.Encode(_configuration.Granularity, resumptionToken.Until)));
             if (!string.IsNullOrWhiteSpace(resumptionToken.Set))
                 properties.Add(EncodeOne("set", resumptionToken.Set));
+            if (resumptionToken.Cursor.HasValue)
+                properties.Add(EncodeOne("cursor", resumptionToken.Cursor));
 
             foreach (var custom in resumptionToken.Custom)
             {

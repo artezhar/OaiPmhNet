@@ -112,7 +112,7 @@ namespace OaiPmhNet
                     new XAttribute(XNamespace.Xmlns + "xsi", OaiNamespaces.XsiNamespace),
                     new XAttribute(OaiNamespaces.XsiNamespace + "schemaLocation", OaiNamespaces.OaiSchemaLocation),
                         new XElement(OaiNamespaces.OaiNamespace + "responseDate",
-                            _dateConverter.Encode(_configuration.Granularity, date)),
+                            _dateConverter.Encode("yyyy-MM-ddThh:mm:ssZ", date)),
                             oaiElements));
         }
 
